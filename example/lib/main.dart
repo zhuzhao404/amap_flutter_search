@@ -1,17 +1,20 @@
 /*
  * @Author: 丁健
  * @Date: 2022-04-01 08:43:58
- * @LastEditTime: 2022-04-01 11:56:08
+ * @LastEditTime: 2022-04-01 16:05:44
  * @LastEditors: 丁健
  * @Description: 
  * @FilePath: /amap_flutter_search/example/lib/main.dart
  * 可以输入预定的版权声明、个性签名、空行等
  */
+import 'package:amap_flutter_search_example/test_map_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:amap_flutter_search/amap_flutter_search.dart';
+import 'package:amap_flutter_map/amap_flutter_map.dart' as ap;
+import 'package:amap_flutter_base/amap_flutter_base.dart' as ap;
 
 void main() {
   runApp(const MyApp());
@@ -64,6 +67,15 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Plugin example app'),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) {
+                    return YZTestMapPage();
+                  }));
+                },
+                icon: Icon(Icons.map_outlined))
+          ],
         ),
         body: Column(
           children: [
