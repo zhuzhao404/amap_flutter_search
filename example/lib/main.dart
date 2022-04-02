@@ -1,7 +1,7 @@
 /*
  * @Author: 丁健
  * @Date: 2022-04-01 08:43:58
- * @LastEditTime: 2022-04-01 16:05:44
+ * @LastEditTime: 2022-04-02 16:05:55
  * @LastEditors: 丁健
  * @Description: 
  * @FilePath: /amap_flutter_search/example/lib/main.dart
@@ -13,8 +13,6 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:amap_flutter_search/amap_flutter_search.dart';
-import 'package:amap_flutter_map/amap_flutter_map.dart' as ap;
-import 'package:amap_flutter_base/amap_flutter_base.dart' as ap;
 
 void main() {
   runApp(const MyApp());
@@ -82,7 +80,7 @@ class _MyAppState extends State<MyApp> {
             TextButton.icon(
                 onPressed: () {
                   AmapFlutterSearch.setApiKey(
-                      '900f72eeee0f21e435cebb0ef155582a',
+                      '3b4acde13d0603ecbea0b74781eafaf3',
                       'df6898859be82405b9b41d8d1f1e86d3');
                   AmapFlutterSearch.updatePrivacyAgree(true);
                   AmapFlutterSearch.updatePrivacyShow(true, true);
@@ -125,6 +123,7 @@ class _MyAppState extends State<MyApp> {
                   return ListTile(
                     title: Text(dataList[index].name ?? ''),
                     subtitle: Text(dataList[index].address ?? ''),
+                    trailing: Text('距离:${dataList[index].distance}米'),
                   );
                 },
                 itemCount: dataList.length,

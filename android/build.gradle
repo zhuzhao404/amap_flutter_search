@@ -32,4 +32,8 @@ android {
     defaultConfig {
         minSdkVersion 16
     }
+    dependencies {
+        //搜索功能
+        compile 'com.amap.api:search:latest.integration'
+    }
 }
