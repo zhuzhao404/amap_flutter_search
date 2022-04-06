@@ -41,7 +41,7 @@ android {
         versionName flutterVersionName
     }
 
-        signingConfigs {
+    signingConfigs {
         debug {
             storeFile file("../food.keystore")
             storePassword 'yz12345678'
@@ -63,6 +63,12 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+}
+
+dependencies {
+    //demo中引入高德地图SDK
+    implementation 'com.amap.api:3dmap:8.1.0'
 }
 
 flutter {
