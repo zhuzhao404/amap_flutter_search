@@ -43,12 +43,10 @@
         geo.keywords = keyword;
         geo.city = city;
         geo.types               = types;
-        geo.requireExtension    = YES;
-            
+
         /*  搜索SDK 3.2.0 中新增加的功能，只搜索本城市的POI。*/
         geo.cityLimit           = YES;
-        geo.requireSubPOIs      = YES;
-        
+
         [search AMapPOIKeywordsSearch:geo];
         
         resultCallback = result;
@@ -65,9 +63,7 @@
         geo.city = city;
         geo.location            = [AMapGeoPoint locationWithLatitude:[latitude doubleValue] longitude:[longitude doubleValue]];
         geo.keywords            = keyword;
-        geo.requireExtension    = YES;
-        geo.requireSubPOIs      = YES;
-        
+
         [search AMapPOIAroundSearch:geo];
         
         resultCallback = result;
